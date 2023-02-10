@@ -1,0 +1,35 @@
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+var displayButton = document.createElement("button");
+displayButton.innerHTML = "Location";
+document.body.appendChild(displayButton);
+
+var iframeHolder = document.createElement("div");
+iframeHolder.style.display = "none";
+document.body.appendChild(iframeHolder);
+
+displayButton.addEventListener("click", function() {
+var iframe = document.getElementById("iframe");
+if (!iframe) {
+iframe = document.createElement("iframe");
+iframe.id = "iframe";
+iframe.src = "https://chxdii.github.io/L8/";
+iframe.style.width = "430px";
+iframe.style.height = "320px";
+iframe.style.backgroundColor = "white";
+iframe.style.border = "1px solid gray";
+iframe.style.borderRadius = "10px";
+iframe.style.position = "fixed";
+iframe.style.top = "50%";
+iframe.style.left = "50%";
+iframe.style.transform = "translate(-50%, -50%)";
+iframe.style.zIndex = "10";
+iframeHolder.appendChild(iframe);
+} else {
+iframe.parentNode.removeChild(iframe);
+}
+iframeHolder.style.display = iframeHolder.style.display === "none" ? "block" : "none";
+});
+});
+</script>
